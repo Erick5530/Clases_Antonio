@@ -34,7 +34,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    viewBinding {enable=true}
+    viewBinding { enable = true }
 }
 
 dependencies {
@@ -47,5 +47,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-service:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-process:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+
 }
 
