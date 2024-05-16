@@ -15,13 +15,55 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         initBinding()
         initListeners()
         initObservers()
+        Toast.makeText(this, "dentro de onCreate", Toast.LENGTH_LONG).show()
         mainViewModel.saludarCada3s()
     }
+
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "dentro de onStart", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "dentro de onPause", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "dentro de onResume", Toast.LENGTH_LONG).show()}
+
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "dentro de onStop", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "dentro de onDestroy", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this, "dentro de onRestart", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Toast.makeText(this, "dentro de onSaveInstanceState", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Toast.makeText(this, "dentro de onRestoreInstanceState", Toast.LENGTH_LONG).show()
+    }
+
 
     private fun initBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,6 +75,9 @@ class MainActivity : AppCompatActivity() {
         binding.tvSaludo.setOnClickListener {
             Toast.makeText(this, "Hola ${binding.tvNombre.text}", Toast.LENGTH_LONG).show()
         }
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
